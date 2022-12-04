@@ -23,6 +23,7 @@ public class Day1 {
 
 		ArrayList<Integer> list = new ArrayList<Integer>();
 
+		
 		try {
 			while ((stringLine = bReader.readLine()) != null) {
 
