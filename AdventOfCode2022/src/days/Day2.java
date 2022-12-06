@@ -37,7 +37,6 @@ public class Day2 {
 //    C Y = +2
 
 		BufferedReader bReader;
-
 		bReader = new BufferedReader(new FileReader("resources\\rockPaperScissors.txt"));
 
 		String stringLine;
@@ -53,9 +52,7 @@ public class Day2 {
 		try {
 			while ((stringLine = bReader.readLine()) != null) {
 				switch (stringLine) {
-
 				// DRAW
-
 				case "A X":
 					listDraw.add(stringLine);
 					break;
@@ -65,9 +62,7 @@ public class Day2 {
 				case "C Z":
 					listDraw.add(stringLine);
 					break;
-
 				// WIN
-
 				case "A Y":
 					listWin.add(stringLine);
 					break;
@@ -77,9 +72,7 @@ public class Day2 {
 				case "C X":
 					listWin.add(stringLine);
 					break;
-
 				// Lose
-
 				case "A Z":
 					listLose.add(stringLine);
 					break;
@@ -89,7 +82,6 @@ public class Day2 {
 				case "C Y":
 					listLose.add(stringLine);
 					break;
-
 				default:
 					System.out.println("moin moin");
 				}
@@ -97,17 +89,14 @@ public class Day2 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		// DRAW
 		int drawRock = Collections.frequency(listDraw, "A X");
 		int drawPaper = Collections.frequency(listDraw, "B Y");
 		int drawScissors = Collections.frequency(listDraw, "C Z");
-
 		// WIN
 		int winRock = Collections.frequency(listWin, "A Y");
 		int winPaper = Collections.frequency(listWin, "B Z");
 		int winScissors = Collections.frequency(listWin, "C X");
-
 		// LOSE
 		int loseRock = Collections.frequency(listLose, "A Z");
 		int losePaper = Collections.frequency(listLose, "B X");
@@ -116,7 +105,6 @@ public class Day2 {
 		boolean drawBool = true;
 
 		while (drawBool == true) {
-
 		for (int i = 0; i < drawRock; i++) {
 		sumDraw += 4;
 		}
@@ -132,7 +120,6 @@ public class Day2 {
 		boolean winBool = true;
 
 		while (winBool == true) {
-
 		for (int i = 0; i < winRock; i++) {
 		sumWin += 8;
 		}
@@ -148,7 +135,6 @@ public class Day2 {
 		boolean loseBool = true;
 
 		while (loseBool == true) {
-
 		for (int i = 0; i < loseRock; i++) {
 		sumLose += 3;
 		}
@@ -162,9 +148,7 @@ public class Day2 {
 		}
 
 		int totalScore = sumDraw + sumWin + sumLose;
-
 		System.out.println(totalScore);
-		
 
 // part two
 
@@ -172,7 +156,7 @@ public class Day2 {
 //        B = Paper
 //        C = Scissors
 
-//         Rock = +1    
+//        Rock = +1    
 //        Paper = +2
 //        Scissors = +3
 
@@ -201,7 +185,6 @@ public class Day2 {
 		int sumLose1 = 0;
 		
 		BufferedReader bReader1;
-		
 		bReader1 = new BufferedReader(new FileReader("resources\\rockPaperScissors.txt"));
 		
 		String stringLine1;
@@ -209,9 +192,7 @@ public class Day2 {
 		try {
 			while ((stringLine1 = bReader1.readLine()) != null) {
 				switch (stringLine1) {
-
 				// DRAW
-
 				case "A Y":
 					listDraw1.add(stringLine1);
 					break;
@@ -221,9 +202,7 @@ public class Day2 {
 				case "C Y":
 					listDraw1.add(stringLine1);
 					break;
-
 				// WIN
-
 				case "A Z":
 					listWin1.add(stringLine1);
 					break;
@@ -233,9 +212,7 @@ public class Day2 {
 				case "C Z":
 					listWin1.add(stringLine1);
 					break;
-
 				// Lose
-
 				case "A X":
 					listLose1.add(stringLine1);
 					break;
@@ -245,7 +222,6 @@ public class Day2 {
 				case "C X":
 					listLose1.add(stringLine1);
 					break;
-
 				default:
 					System.out.println("tschau tschau");
 				}
@@ -258,21 +234,18 @@ public class Day2 {
 		int drawA = Collections.frequency(listDraw1, "A Y");
 		int drawB = Collections.frequency(listDraw1, "B Y");
 		int drawC = Collections.frequency(listDraw1, "C Y");
-
 		// WIN
 		int winA = Collections.frequency(listWin1, "A Z");
 		int winB = Collections.frequency(listWin1, "B Z");
 		int winC = Collections.frequency(listWin1, "C Z");
-
 		// LOSE
 		int loseA = Collections.frequency(listLose1, "A X");
 		int loseB = Collections.frequency(listLose1, "B X");
 		int loseC = Collections.frequency(listLose1, "C X");
 		
 		boolean drawBool2 = true;
-
+		
 		while (drawBool2 == true) {
-
 		for (int i = 0; i < drawA; i++) {
 		sumDraw1 += 4;
 		}
@@ -286,9 +259,8 @@ public class Day2 {
 		}
 
 		boolean winBool2 = true;
-
+	
 		while (winBool2 == true) {
-
 		for (int i = 0; i < winA; i++) {
 		sumWin1 += 8;
 		}
@@ -304,7 +276,6 @@ public class Day2 {
 		boolean loseBool2 = true;
 
 		while (loseBool2 == true) {
-
 		for (int i = 0; i < loseA; i++) {
 		sumLose1 += 3;
 		}
@@ -318,8 +289,6 @@ public class Day2 {
 		}
 
 		int totalScore2 = sumDraw1 + sumWin1 + sumLose1;
-
 		System.out.println(totalScore2);
-		
 	}
 }

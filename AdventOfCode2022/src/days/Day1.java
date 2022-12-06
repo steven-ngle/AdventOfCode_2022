@@ -9,7 +9,6 @@ import java.util.Collections;
 
 public class Day1 {
 
-	
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 
@@ -28,7 +27,7 @@ public class Day1 {
 			while ((stringLine = bReader.readLine()) != null) {
 
 				if (stringLine.matches("[0-9]+")){
-					sum = sum + Integer.parseInt(stringLine);
+					sum += Integer.parseInt(stringLine);
 				} else {
 					list.add(sum);
 					sum = 0;
