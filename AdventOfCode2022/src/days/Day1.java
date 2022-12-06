@@ -33,7 +33,6 @@ public class Day1 {
 					list.add(sum);
 					sum = 0;
 				}
-				
 			}
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch bloc
