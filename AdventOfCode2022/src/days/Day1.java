@@ -13,11 +13,8 @@ public class Day1 {
 		// TODO Auto-generated method stub
 
 		BufferedReader bReader;
-
-		bReader = new BufferedReader(new FileReader("resources\\calories.txt"));
-
+		bReader = new BufferedReader(new FileReader("resources\\day1.txt"));
 		String stringLine;
-		
 		int sum = 0;
 
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -42,7 +39,6 @@ public class Day1 {
 		}
 		
         System.out.println(Collections.max(list));
-        
         
         // part two
         

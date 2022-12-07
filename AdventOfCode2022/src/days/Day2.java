@@ -185,7 +185,7 @@ public class Day2 {
 		int sumLose1 = 0;
 		
 		BufferedReader bReader1;
-		bReader1 = new BufferedReader(new FileReader("resources\\rockPaperScissors.txt"));
+		bReader1 = new BufferedReader(new FileReader("resources\\day2.txt"));
 		
 		String stringLine1;
 		
@@ -243,9 +243,6 @@ public class Day2 {
 		int loseB = Collections.frequency(listLose1, "B X");
 		int loseC = Collections.frequency(listLose1, "C X");
 		
-		boolean drawBool2 = true;
-		
-		while (drawBool2 == true) {
 		for (int i = 0; i < drawA; i++) {
 		sumDraw1 += 4;
 		}
@@ -255,12 +252,7 @@ public class Day2 {
 		for (int i = 0; i < drawC; i++) {
 		sumDraw1 += 6;
 		}
-		drawBool2 = false;
-		}
-
-		boolean winBool2 = true;
-	
-		while (winBool2 == true) {
+		
 		for (int i = 0; i < winA; i++) {
 		sumWin1 += 8;
 		}
@@ -270,12 +262,7 @@ public class Day2 {
 		for (int i = 0; i < winC; i++) {
 		sumWin1 += 7;
 		}
-		winBool2 = false;
-		}
-
-		boolean loseBool2 = true;
-
-		while (loseBool2 == true) {
+		
 		for (int i = 0; i < loseA; i++) {
 		sumLose1 += 3;
 		}
@@ -284,8 +271,6 @@ public class Day2 {
 		}
 		for (int i = 0; i < loseC; i++) {
 		sumLose1 += 2;
-		}
-		loseBool2 = false;
 		}
 
 		int totalScore2 = sumDraw1 + sumWin1 + sumLose1;
