@@ -18,9 +18,17 @@ public class Day3 {
 		String stringLine;
 		String firstCompartment = "";
 		String secondCompartment = "";
+		String rucksack1 = "";
+		String rucksack2 = "";
+		String rucksack3 = "";
 		int sum = 0;
+		int sum2 = 0;
 		ArrayList<String> firstCompartmentList = new ArrayList<String>();
 		ArrayList<String> secondCompartmentList = new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> rucksackList1 = new ArrayList<String>();
+		ArrayList<String> rucksackList2 = new ArrayList<String>();
+		ArrayList<String> rucksackList3 = new ArrayList<String>();
 		
 		bReader = new BufferedReader(new FileReader("resources\\day3.txt"));
 		
@@ -28,6 +36,7 @@ public class Day3 {
 			while ((stringLine = bReader.readLine()) != null) {
 				firstCompartmentList.add(stringLine.substring(0, stringLine.length()/2));
 				secondCompartmentList.add(stringLine.substring(stringLine.length()/2, stringLine.length()));
+				list.add(stringLine);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,6 +74,55 @@ public class Day3 {
 		System.out.println(sum);
 		
 		// part two
-		// to be continued...
+
+		System.out.println(list);
+		boolean check = true;
+		
+		while (check) {
+			rucksackList1.add(list.get(0));
+			list.remove(0);
+			rucksackList2.add(list.get(0));
+			list.remove(0);
+			rucksackList3.add(list.get(0));
+			list.remove(0);
+			if (list.size() == 0) {
+				check = false;
+			}
+		}
+		
+		for (int i = 0; i < rucksackList1.size(); i++) {
+			rucksack1 = rucksackList1.get(i);
+			rucksack2 = rucksackList2.get(i);
+			rucksack3 = rucksackList3.get(i);
+			
+			Set<Character> setRucksack1 = new HashSet<Character>();
+			Set<Character> setRucksack2 = new HashSet<Character>();	
+			Set<Character> setRucksack3 = new HashSet<Character>();	
+			
+			for (char c : rucksack1.toCharArray()) {
+				setRucksack1.add(c);
+			}
+			for (char c : rucksack2.toCharArray()) {
+				setRucksack2.add(c);
+			}
+			for (char c : rucksack3.toCharArray()) {
+				setRucksack3.add(c);
+			}
+			
+			setRucksack1.retainAll(setRucksack2);
+			setRucksack1.retainAll(setRucksack3);
+			
+			for (char c : setRucksack1) {
+				if (Character.isUpperCase(c)) {
+					int priorityUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(c) + 27;
+					sum2 += priorityUpperCase;
+				}
+				if (Character.isLowerCase(c)) {
+					int priorityLowerCase = "abcdefghijklmnopqrstuvwxyz".indexOf(c) + 1;
+					sum2 += priorityLowerCase;
+				}
+			}
+		}
+		System.out.println(sum2);
 	}
 }
